@@ -6,7 +6,6 @@ pnpm-debug.log*
 lerna-debug.log*
 
 dist/*
-!dist/.gitkeep
 build/
 
 .env

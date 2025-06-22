@@ -60,7 +60,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/auth/login", loginLimiter, async (req: Request, res: Response) => {
     try {
       const { email, password } = loginSchema.parse(req.body);
-      console.log(email, password);
       const cleanEmail = sanitizeInput(email);
       
       if (!validateEmail(cleanEmail)) {

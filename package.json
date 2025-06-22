@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "tsx watch server/index.ts",
-    "build": "tsc",
+    "build": "tsc && npm run copy-shared",
+    "vercel-build": "tsc && npm run copy-shared",
+    "copy-shared": "node -e \"require('fs').cpSync('shared', 'dist/shared', {recursive: true, force: true})\"",
     "start": "node dist/server/index.js",
     "create-admin": "tsx scripts/create-admin.ts",
     "setup-db": "tsx scripts/setup-db.ts",
